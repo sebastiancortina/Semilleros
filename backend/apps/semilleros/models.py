@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 # Create your models here.
 class Semillero(models.Model):
     #id_users = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user")
+    #id_users = models.ManyToManyField(User, related_name="perfil")
     nombre = models.CharField('NOMBRE DEL SEMILLERO', max_length=250)
     facultad = models.CharField('FACULTAD', max_length=250)
     programa_academico = models.CharField('PROGRMA ACADÉMICO', max_length=250)

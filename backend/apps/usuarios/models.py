@@ -6,9 +6,9 @@ from apps.semilleros.models import Semillero
 # Create your models here.
 class Perfil(models.Model):
     username = models.OneToOneField(User, on_delete=models.CASCADE, related_name="usuario")
-    id_semillero = models.ForeignKey(Semillero, on_delete=models.CASCADE, related_name="perfil")
+    id_semillero = models.ForeignKey(Semillero, on_delete=models.CASCADE, related_name="perfil", null=True)
+    ni = models.BigIntegerField( 'Numero de identificacion',  primary_key= True,)
     rol = models.CharField(max_length=250, default='estudiante', null=True)
-    ni = models.BigIntegerField('Numero de identificacion')
     fecha_n = models.CharField('FECHA DE NACIMIENTO', max_length=250)
     direccion = models.CharField('DIRECCIÓN RESIDENCIA', max_length=250)
     l_espedicion = models.CharField('LUGAR DE EXPEDICIÓN ID', max_length=250)

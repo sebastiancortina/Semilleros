@@ -9,19 +9,37 @@ class UsuarioSerializer(serializers.ModelSerializer):
         model =  User
         fields = '__all__'
 
+
+
 class PerfilSerializer(serializers.ModelSerializer):
 
-   #usuario = UsuarioSerializer(many=True, read_only = True)
+   usuario = UsuarioSerializer(many=True, read_only = True)
+  
 
    class Meta:
         model =  Perfil
         fields = '__all__'
 
-class SemilleroSerializer(serializers.ModelSerializer):
-   # aprobado_s = Aval_semillero_Serializer(many=True, read_only = True)
-   perfil = PerfilSerializer(many=True, read_only = True)
-   # = UsuarioSerializer(many=True, read_only = True)
+# class SemilleroSerializer(serializers.ModelSerializer):
+#    perfil = PerfilSerializer(many=True, read_only = True)
+#    class Meta:
+#        model = Semillero
+#        fields = '__all__'
+        
+        # fields = [
+        #     "id",
+        #     "nombre",
+        #     "facultad",
+        #     "programa_academico",
+        #     "investigacion",
+        #     "investigacion_asociado",
+        #     "tematica",
+        #     "justificacion",
+        # ]
 
+
+class SemilleroSerializer(serializers.ModelSerializer):
+   perfil = PerfilSerializer(many=True, read_only = True)
    class Meta:
        model = Semillero
        fields = '__all__'
@@ -36,9 +54,6 @@ class SemilleroSerializer(serializers.ModelSerializer):
         #     "tematica",
         #     "justificacion",
         # ]
-
-
-
 
 
 
