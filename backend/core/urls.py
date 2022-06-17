@@ -18,9 +18,26 @@ from django.urls import path, include
 
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
+#from usuarios.urls import router_user
+#from rest_framework import routers
+
+#router = routers.SimpleRouter()
+
+schema_view = get_schema_view(
+   openapi.Info(
+      title="Semilleros API",
+      default_version='v1',
+      description="Decumentacion Semillero",
+      terms_of_service="https://www.google.com/policies/terms/",
+      contact=openapi.Contact(email="sebastiancortina97@gmail.com"),
+      license=openapi.License(name="BSD License"),
+   ),
+   public=True
+)
+
 
 urlpatterns = [
-    path('admin/', admin.site.urls)
-    #path('api/v1/semillero/', include("apps.semilleros.urls")),
+    path('admin/', admin.site.urls),
+    path('api/v1/semillero/', include("usuarios.urls")),
     
 ]

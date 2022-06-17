@@ -1,15 +1,13 @@
-# from rest_framework import serializers
+from rest_framework import serializers
+from usuarios.models import User
 # #from apps.semilleros.models import Semillero
 # #from django.contrib.auth.models import User
 # #from apps.usuarios.models import *
 
-
-# # class UsuarioSerializer(serializers.ModelSerializer):
-# #     class Meta:
-# #         model =  User
-# #         fields = '__all__'
-
-
+class UsuarioSerializer(serializers.ModelSerializer):
+    class Meta:
+        model =  User
+        fields = '__all__'
 
 
 # # class PerfilSerializer(serializers.ModelSerializer):
